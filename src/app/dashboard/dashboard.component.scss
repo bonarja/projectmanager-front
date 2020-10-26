@@ -1,0 +1,80 @@
+$headerHeight: 70px;
+.wrapDashboard {
+    background-color: #a3afbf;
+    box-shadow: inset 0 -13px 46px -4px #353f4c;
+}
+.dashboard {
+    transition: all ease 300ms;
+    display: grid;
+    grid-template-rows: $headerHeight auto;
+    overflow: hidden;
+    .dheader {
+        background-color: white;
+        display: flex;
+        .icon {
+            width: 100px;
+            user-select: none;
+            .circle {
+                width: 35px;
+                height: 35px;
+                background-color: #4e9aff;
+                border-radius: 50px;
+                span {
+                    color: white;
+                    font-size: 1.2em;
+                }
+            }
+        }
+        .menu {
+            justify-content: flex-start;
+            .item {
+                color: #a1a5b1;
+                font-weight: 600;
+                margin-left: 50px;
+                outline: none;
+                user-select: none;
+                cursor: pointer;
+                height: 100%;
+                position: relative;
+                &.active {
+                    color: #2f3039;
+                    &::after {
+                        content: "";
+                        width: 28px;
+                        height: 4px;
+                        border-radius: 10px;
+                        background-color: #4e9aff;
+                        position: absolute;
+                        bottom: 17px;
+                        left: 0px;
+                    }
+                }
+            }
+        }
+    }
+    .dcontent {
+        background-color: #f5f7fc;
+        padding: 20px 40px;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .dashboard {
+        width: 80% !important;
+        max-width: 1450px !important;
+        height: 90%;
+        max-height: 970px;
+        border-radius: 5px;
+        box-shadow: 0 5px 25px -4px #0000002e;
+    }
+}
+
+::ng-deep {
+    h1 {
+        color: #2f3039;
+        animation-name: slideInLeft;
+        animation-duration: 300ms;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease;
+    }
+}

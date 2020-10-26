@@ -8,7 +8,7 @@ import { Request } from './request.service';
     providedIn: 'root',
 })
 export class ApiService {
-    isValidToken: boolean;
+    isValidToken: boolean = true; //FIXME: remove true
     constructor(private request: Request) {}
 
     auth = () =>
