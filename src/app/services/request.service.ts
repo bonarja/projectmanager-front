@@ -101,7 +101,16 @@ export class Request {
                 request(type)
                     .then((r) => done(r))
                     .catch((err) => {
-                        showErrorAlert && GLOBAL.alert(err);
+                        if (err === 'Invalid credentials') {
+                            showErrorAlert &&
+                                GLOBAL.alert(err, () => {
+                                    localStorage.clear();
+                                    location.reload();
+                                });
+                        } else {
+                            showErrorAlert && GLOBAL.alert(err);
+                        }
+
                         console.log(err);
                         reject(err);
                     });

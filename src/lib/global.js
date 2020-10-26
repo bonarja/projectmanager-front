@@ -95,6 +95,33 @@
                 0% { transform: rotate(0deg); }
                 100% { transform: rotate(360deg); }
             }
+            .big_btn {
+                color: white;
+                background-color: #f36031;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 30px;
+                border-radius: 7px;
+                font-weight: 400;
+                font-size: 1.1em;
+                letter-spacing: 0.04em;
+                height: 40px;
+                padding-left: 20%;
+                padding-right: 20%;
+                cursor: pointer;
+                transition: all ease 150ms;
+                user-select: none;
+            }
+            .big_btn:hover {
+                box-shadow: 0 22px 15px -15px rgba(0, 0, 0, 0.17);
+                transform: translateY(1px);
+            }
+            .big_btn i {
+                color: white;
+                font-size: 1em;
+                margin-right: 5px;
+            }
         </style>
         <div id="__loader" style="border: 6px solid #e4e4e4;
         border-top: 6px solid #FF9800;

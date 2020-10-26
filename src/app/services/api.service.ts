@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { LoginResponse } from '../interfaces/loginResponse.interface';
 import { FormRegister } from '../interfaces/register.form.interface';
 import { Request } from './request.service';
 
@@ -21,4 +20,7 @@ export class ApiService {
     register = (form: FormRegister) => this.request.api('user', form).post();
     login = (form: { username: string; pass: string }) =>
         this.request.api('login', form).post();
+    getProjects = () => this.request.api('projects').post();
+    projectCreate = (form: any) =>
+        this.request.api('project/create', form).post();
 }

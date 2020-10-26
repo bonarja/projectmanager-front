@@ -1,0 +1,42 @@
+<div class="wrapWindow cover center">
+    <div class="window animated zoomIn">
+        <div class="form cover">
+            <H2>Nuevo Projecto</H2>
+            <custom_input
+                name="nombre"
+                nid="name"
+                [change]="changeInput"
+            ></custom_input>
+            <custom_input
+                name="descripción"
+                nid="description"
+                type="textarea"
+                [change]="changeInput"
+            ></custom_input>
+            <span
+                style="
+                    margin: 0 0 10px;
+                    font-size: 0.9em;
+                    color: #777777;
+                    letter-spacing: 0.07em;
+                    font-weight: 600;
+                "
+                >Color:</span
+            >
+            <color-slider
+                style="
+                    width: 100%;
+                    margin-bottom: 48px;
+                    display: block;
+                    margin-top: 12px;
+                "
+                [color]="initialColor"
+                (onChangeComplete)="changeInput($event)"
+            ></color-slider>
+        </div>
+        <div class="buttons">
+            <button (click)="createProject()">aceptar</button>
+            <button class="danger" (click)="close()">cancelar</button>
+        </div>
+    </div>
+</div>

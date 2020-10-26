@@ -54,7 +54,8 @@ $headerHeight: 70px;
     }
     .dcontent {
         background-color: #f5f7fc;
-        padding: 20px 40px;
+        // padding: 20px 40px;
+        overflow: hidden;
     }
 }
 
@@ -76,5 +77,10 @@ $headerHeight: 70px;
         animation-duration: 300ms;
         animation-fill-mode: forwards;
         animation-timing-function: ease;
+        padding: 20px 40px;
+    }
+    .main {
+        padding: 20px 40px;
+        overflow-y: auto;
     }
 }

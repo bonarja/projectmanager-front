@@ -10,6 +10,7 @@ interface Menu {
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
     styleUrls: ['./dashboard.component.scss'],
+    host: { class: 'cover relative' },
 })
 export class DashboardComponent implements OnInit {
     activeMenu: Menu = null;

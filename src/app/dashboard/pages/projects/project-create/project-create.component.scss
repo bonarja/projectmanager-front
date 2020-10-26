@@ -1,0 +1,28 @@
+.wrapWindow {
+    position: fixed;
+    z-index: 11;
+    left: 0;
+    top: 0;
+    background-color: rgba(20, 20, 20, 0.7);
+    .window {
+        background-color: white;
+        width: 80%;
+        max-width: 800px;
+        height: 90%;
+        max-height: 900px;
+        border-radius: 4px;
+        padding: 30px;
+        display: grid;
+        grid-template-rows: auto min-content;
+        .form {
+            overflow-y: auto;
+        }
+        .buttons {
+            padding-top: 20px;
+            button {
+                margin: 0 4px;
+                float: right;
+            }
+        }
+    }
+}

@@ -1,0 +1,69 @@
+:host {
+    display: block;
+    background-color: white;
+    width: 360px;
+    height: 266px;
+    border-radius: 10px;
+    box-shadow: 0 7px 21px -14px #0000001f;
+    padding: 15px;
+}
+.header {
+    display: grid;
+    grid-template-columns: min-content auto;
+    // height: 40px;
+    .box {
+        height: 75px;
+        width: 75px;
+        border-radius: 8px;
+    }
+    .text {
+        padding: 0 13px;
+        p {
+            color: #2f3039;
+            font-weight: 600;
+            word-break: break-all;
+            font-size: 1.3em;
+            margin: 0;
+            padding-top: 8px;
+            line-height: 1.5;
+            white-space: normal;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    }
+}
+.description {
+    color: #838594;
+    font-size: 1.2em;
+    line-height: 1.2;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    border-bottom-style: dashed;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    border-color: #8385944f;
+    border-width: 2px;
+    overflow: hidden;
+    height: 82px;
+}
+.taskCount {
+    float: left;
+    color: #2f3039;
+    align-items: flex-start;
+    padding-top: 10px;
+    .count {
+        font-weight: 600;
+    }
+    .tareas {
+        color: #858795;
+        font-size: 1.1em;
+        margin-top: 5px;
+    }
+}

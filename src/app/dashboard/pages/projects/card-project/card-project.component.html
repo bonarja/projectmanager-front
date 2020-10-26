@@ -1,0 +1,14 @@
+<div class="header">
+    <div
+        class="box"
+        [ngStyle]="{ backgroundColor: project.color || 'coral' }"
+    ></div>
+    <div class="text">
+        <p class="t">{{ project.name }}</p>
+    </div>
+</div>
+<p class="description">{{ project.description }}</p>
+<div class="taskCount center y">
+    <label class="count">{{ project.taskCount }}</label>
+    <label class="tareas">Tareas</label>
+</div>

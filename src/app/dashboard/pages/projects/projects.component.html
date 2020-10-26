@@ -1,1 +1,32 @@
-<h1>Projectos</h1>
+<ProjectCreate
+    *ngIf="showCreateProject"
+    [onclose]="oncloseProjectCreate"
+></ProjectCreate>
+<div class="Projects cover">
+    <h1>Projectos</h1>
+    <div class="main">
+        <div class="list flexList">
+            <div class="wrapProject">
+                <div
+                    class="createProject animated zoomIn center"
+                    (click)="showCreateProject = true"
+                >
+                    <div class="center y">
+                        <p>Nuevo Proyecto</p>
+                        <span class="material-icons"> add </span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="wrapProject"
+                *ngFor="let item of projects; let i = index"
+            >
+                <CardProject
+                    class="animated zoomIn"
+                    [ngStyle]="{ animationDelay: 50 * i + 1 + 'ms' }"
+                    [project]="item"
+                ></CardProject>
+            </div>
+        </div>
+    </div>
+</div>
