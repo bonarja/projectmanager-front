@@ -7,6 +7,7 @@ import { ProjectCreateComponent } from './project-create/project-create.componen
 import { CustomInputComponent } from 'src/app/components/custom-input/custom-input.component';
 import { FormsModule } from '@angular/forms';
 import { ColorSliderModule } from 'ngx-color/slider';
+import { SharedComponentsModule } from 'src/app/components-shared/shared.components.module';
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { ColorSliderModule } from 'ngx-color/slider';
         ProjectsRoutingModule,
         FormsModule,
         ColorSliderModule,
+        SharedComponentsModule,
     ],
     bootstrap: [ProjectsComponent],
 })

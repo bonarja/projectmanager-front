@@ -34,7 +34,7 @@ export class ProjectCreateComponent implements OnInit {
         this.onclose();
     }
     createProject() {
-        GLOBAL.alert('Creando Proyecto');
+        GLOBAL.loading(true, 'Creando Proyecto');
 
         this.api
             .projectCreate(this.dataForm)

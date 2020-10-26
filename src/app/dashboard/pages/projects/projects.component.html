@@ -5,7 +5,9 @@
 <div class="Projects cover">
     <h1>Proyectos</h1>
     <div class="main">
-        <div class="list flexList">
+        <!-- <Loading *ngIf="!projects || !projects.length"></Loading> -->
+
+        <div class="list flexList" *ngIf="projects && projects.length">
             <div class="wrapProject">
                 <div
                     class="createProject animated zoomIn center"
@@ -19,12 +21,20 @@
             </div>
             <div
                 class="wrapProject"
-                *ngFor="let item of projects; let i = index"
+                *ngFor="let project of projects; let i = index"
+                #el
+                (click)="
+                    openProject(project, el.querySelector('CardProject'), card)
+                "
             >
                 <CardProject
-                    class="animated zoomIn"
-                    [ngStyle]="{ animationDelay: 50 * i + 1 + 'ms' }"
-                    [project]="item"
+                    #card
+                    style="display: flex"
+                    class="animated zoomIn center"
+                    [ngClass]="{ projectOpened: project === projectOpened }"
+                    [ngStyle]="getStyleProject(i, project, cssToOpenCard)"
+                    [project]="project"
+                    [onclose]="closeProject"
                 ></CardProject>
             </div>
         </div>

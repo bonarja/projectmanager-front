@@ -1,14 +1,31 @@
-<div class="header">
-    <div
-        class="box"
-        [ngStyle]="{ backgroundColor: project.color || 'coral' }"
-    ></div>
-    <div class="text">
-        <p class="t">{{ project.name }}</p>
+<div
+    class="cardProject cover center"
+    [ngStyle]="getStyleOpened('cardProject', isOpened)"
+>
+    <div class="cardContent cover relative">
+        <div
+            *ngIf="isOpened"
+            class="closeBtn animated zoomIn"
+            (click)="close()"
+        ></div>
+        <div class="header">
+            <div
+                class="box"
+                [ngStyle]="{ backgroundColor: project.color || 'coral' }"
+            ></div>
+            <div class="text">
+                <p class="t">{{ project.name }}</p>
+            </div>
+        </div>
+        <p
+            class="description"
+            [ngStyle]="getStyleOpened('description', isOpened)"
+        >
+            {{ project.description }}
+        </p>
+        <div class="taskCount center y" *ngIf="!isOpened">
+            <label class="count">{{ project.taskCount }}</label>
+            <label class="tareas">Tareas</label>
+        </div>
     </div>
-</div>
-<p class="description">{{ project.description }}</p>
-<div class="taskCount center y">
-    <label class="count">{{ project.taskCount }}</label>
-    <label class="tareas">Tareas</label>
 </div>

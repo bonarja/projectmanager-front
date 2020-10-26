@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ColorSliderModule } from 'ngx-color/slider';
-import { ColorSketchModule } from 'ngx-color/sketch';
+import { SharedComponentsModule } from './components-shared/shared.components.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -15,7 +14,7 @@ import { ColorSketchModule } from 'ngx-color/sketch';
         AppRoutingModule,
         HttpClientModule,
         ColorSliderModule,
-        ColorSketchModule,
+        SharedComponentsModule,
     ],
     bootstrap: [AppComponent],
 })
