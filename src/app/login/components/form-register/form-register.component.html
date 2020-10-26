@@ -1,0 +1,26 @@
+<div class="cover center y relative">
+
+    <label class="title">{{title}}</label>
+    <div class="space"></div>
+    <div class="input">
+        <label>Nombre</label>
+        <input name="name" autocomplete="off" />
+    </div>
+    <div class="input">
+        <label>Usuario</label>
+        <input name="username" autocomplete="off" />
+    </div>
+    <div class="input">
+        <label>Contraseña</label>
+        <input type="password" name="pass" autocomplete="off" />
+    </div>
+    <div class="input">
+        <label>Confirme Contraseña</label>
+        <input type="password" name="pass2" autocomplete="off" />
+    </div>
+    <div class="buttons">
+        <button (click)="cancelar()" class="register">cancelar</button>
+        <button (click)="register()">Aceptar</button>
+        
+    </div>
+</div>

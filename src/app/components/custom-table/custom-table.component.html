@@ -1,0 +1,35 @@
+<div class="wrap_custom_table cover relative" [ngClass]="{ search: search || title || export  }">
+  <div
+    class="search_input"
+    *ngIf="search || title || export"
+    [ngClass]="{ 'grid-x2': !title && export && search }"
+  >
+    <p class="title">{{ title }}</p>
+    <div class="export cover center" [hidden]="!export">
+            <div class="export cover center">
+            <button (click)="runExport()">CSV</button>
+            <button
+                (click)="pdfExport()"
+                style="background-color: #ec8259;"
+            >PDF</button>
+        </div>
+      </div>
+    <input
+      class="filterInput"
+      *ngIf="search"
+      placeholder="Filtrar"
+      name="Filtrar"
+      [(ngModel)]="filterValue"
+      (ngModelChange)="setFilter()"
+    />
+  </div>
+  <ag-grid-angular
+    class="ag-theme-material cover relative block"
+    [columnDefs]="columnDefs"
+    [rowData]="data"
+    (gridReady)="onGridReady($event)"
+    [rowHeight]="'auto'"
+    [gridOptions]="options"
+  >
+  </ag-grid-angular>
+</div>

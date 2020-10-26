@@ -1,0 +1,29 @@
+<div class="Login cover center" [ngClass]="{loading: loading}">
+    <div class="wrapWin center">
+        <div class="win relative center">
+            <div class="content cover">
+                <div class="sp_page">
+                    <div class="wrapContent cover center">
+                        <LoginForm class="cover" [sp]="sp"></LoginForm>
+                    </div>
+                </div>
+                <div class="sp_page formRegister">
+                    <div class="wrapContent cover center">
+                        <FormRegister class="cover" [sp]="sp"></FormRegister>
+                    </div>
+                </div>
+                <div class="sp_page page_loading center">
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="bg relative cover">
+                <div class="layer cover absolute center">
+                    <div class="wrapLoader center">
+                        <Loader class="animated zoomIn"></Loader>
+                    </div>
+                </div>
+                <div class="background cover center absolute"></div>
+            </div>
+        </div>
+    </div>
+</div>

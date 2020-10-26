@@ -6,9 +6,7 @@
         "pm-front": {
             "projectType": "application",
             "schematics": {
-                "@schematics/angular:component": {
-                    "style": "scss"
-                }
+                "@schematics/angular:component": { "style": "scss" }
             },
             "root": "",
             "sourceRoot": "src",
@@ -23,9 +21,18 @@
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.app.json",
                         "aot": true,
-                        "assets": ["src/favicon.ico", "src/assets"],
+                        "assets": [
+                            "src/favicon.ico",
+                            "src/assets",
+                            "src/version.json"
+                        ],
                         "styles": ["src/styles.scss"],
-                        "scripts": []
+                        "scripts": [
+                            "version.js",
+                            "src/lib/sdom.js",
+                            "src/lib/slidepage.js",
+                            "src/lib/global.js"
+                        ]
                     },
                     "configurations": {
                         "production": {
@@ -60,9 +67,7 @@
                 },
                 "serve": {
                     "builder": "@angular-devkit/build-angular:dev-server",
-                    "options": {
-                        "browserTarget": "pm-front:build"
-                    },
+                    "options": { "browserTarget": "pm-front:build" },
                     "configurations": {
                         "production": {
                             "browserTarget": "pm-front:build:production"
@@ -71,9 +76,7 @@
                 },
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
-                    "options": {
-                        "browserTarget": "pm-front:build"
-                    }
+                    "options": { "browserTarget": "pm-front:build" }
                 },
                 "test": {
                     "builder": "@angular-devkit/build-angular:karma",
