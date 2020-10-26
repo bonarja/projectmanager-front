@@ -30,14 +30,13 @@ export class FormComponent implements OnInit {
     login() {
         const form = this.utility.getForm(this.me) as Form;
 
-        console.log(form);
-
         this.sp.go(2); // show loading
         this.api
             .login(form)
             .then((result: LoginResponse) => {
                 this.storage.set('access_token', result.token);
                 this.storage.set('name', result.name);
+                this.api.isValidToken = true;
                 this.router.navigate(['/dashboard']);
             })
             .finally(() => {

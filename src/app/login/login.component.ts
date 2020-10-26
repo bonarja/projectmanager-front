@@ -41,9 +41,8 @@ export class LoginComponent implements OnInit {
         this.verify();
     }
     finishLoad = () => {
-        if (!this.user) {
-            this.loading = false;
-        }
+        if (!this.user) return (this.loading = false);
+
         this.api.isValidToken = true;
         this.storage.set('name', this.user.name);
         this.router.navigate(['/dashboard']);
