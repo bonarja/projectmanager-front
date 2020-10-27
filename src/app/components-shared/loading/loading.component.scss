@@ -1,0 +1,14 @@
+.circle {
+    box-sizing: border-box;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    border: 10px solid #f36031;
+    border-top-color: #fff;
+    animation: spinLoading 1s infinite linear;
+}
+@keyframes spinLoading {
+    100% {
+        transform: rotate(360deg);
+    }
+}

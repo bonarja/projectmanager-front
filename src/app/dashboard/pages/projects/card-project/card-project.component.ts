@@ -30,6 +30,10 @@ export class CardProjectComponent implements OnInit {
             cardProject: {
                 height: '100%',
             },
+            cardContent: {
+                display: 'grid',
+                gridTemplateRows: 'min-content min-content auto',
+            },
         };
         return styles[name];
     }

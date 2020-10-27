@@ -2,7 +2,10 @@
     class="cardProject cover center"
     [ngStyle]="getStyleOpened('cardProject', isOpened)"
 >
-    <div class="cardContent cover relative">
+    <div
+        class="cardContent cover relative"
+        [ngStyle]="getStyleOpened('cardContent', isOpened)"
+    >
         <div
             *ngIf="isOpened"
             class="closeBtn animated zoomIn"
@@ -27,5 +30,6 @@
             <label class="count">{{ project.taskCount }}</label>
             <label class="tareas">Tareas</label>
         </div>
+        <ProjectTasks *ngIf="isOpened" [project]="project"></ProjectTasks>
     </div>
 </div>

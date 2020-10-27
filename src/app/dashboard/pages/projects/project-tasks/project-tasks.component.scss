@@ -1,0 +1,74 @@
+:host {
+    overflow: hidden;
+}
+
+.list {
+    overflow-y: auto;
+    background-color: #f5f7fc;
+    padding: 20px;
+    $border: 10px;
+    .task {
+        width: 100%;
+        // background-color: white;
+        // padding: 20px;
+        margin-bottom: 13px;
+        display: grid;
+        grid-template-columns: min-content auto;
+        min-height: 70px;
+
+        .status {
+            user-select: none;
+            height: 100%;
+            width: 100px;
+            background-color: white;
+            margin-right: 5px;
+            border-top-left-radius: $border;
+            border-bottom-left-radius: $border;
+            .circle {
+                color: white;
+                width: 36px;
+                height: 36px;
+                border-radius: 50px;
+            }
+        }
+        .taskContent {
+            background-color: white;
+            height: 100%;
+            border-top-right-radius: $border;
+            border-bottom-right-radius: $border;
+            padding: 10px;
+            .title {
+                color: #3f395f;
+                font-size: 1.3em;
+            }
+            .description {
+                color: #9d9ca0;
+                margin-top: 10px;
+            }
+        }
+        .status,
+        .taskContent {
+            box-shadow: 0px 2px 14px -5px #615c7531;
+        }
+    }
+    .addTask {
+        background-color: white;
+        border-radius: $border;
+        border-style: dashed;
+        border-color: #d9d9de;
+        box-shadow: 0px 2px 14px -5px #615c7531;
+        color: #c9ccd4;
+        cursor: pointer;
+        user-select: none;
+        p {
+            font-size: 1.8em;
+            margin: 0;
+        }
+        span {
+            font-size: 3em;
+        }
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+}

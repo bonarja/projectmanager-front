@@ -8,6 +8,8 @@ import { CustomInputComponent } from 'src/app/components/custom-input/custom-inp
 import { FormsModule } from '@angular/forms';
 import { ColorSliderModule } from 'ngx-color/slider';
 import { SharedComponentsModule } from 'src/app/components-shared/shared.components.module';
+import { ProjectTasksComponent } from './project-tasks/project-tasks.component';
+import { TaskCreateComponent } from './task-create/task-create.component';
 
 @NgModule({
     declarations: [
@@ -15,6 +17,8 @@ import { SharedComponentsModule } from 'src/app/components-shared/shared.compone
         CardProjectComponent,
         ProjectCreateComponent,
         CustomInputComponent,
+        ProjectTasksComponent,
+        TaskCreateComponent,
     ],
     imports: [
         CommonModule,

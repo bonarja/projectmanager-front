@@ -1,0 +1,26 @@
+<Loading *ngIf="!tasks"></Loading>
+<div class="list cover" *ngIf="tasks">
+    <div class="task animated zoomIn addTask center">
+        <span _ngcontent-upc-c67="" class="material-icons"> add </span>
+        <p>Nueva Tarea</p>
+    </div>
+
+    <div
+        class="task animated zoomIn"
+        *ngFor="let task of tasks; let i = index"
+        [ngStyle]="{ animationDelay: 50 * (i + 1) + 'ms' }"
+    >
+        <div class="status center">
+            <div class="circle center" [ngStyle]="getColor(task.finish)">
+                <!-- <span *ngIf="task.finish" class="material-icons"> done </span> -->
+                <span class="material-icons">
+                    {{ task.finish ? "done" : "schedule" }}
+                </span>
+            </div>
+        </div>
+        <div class="taskContent">
+            <div class="title">{{ task.name }}</div>
+            <div class="description">{{ task.description }}</div>
+        </div>
+    </div>
+</div>

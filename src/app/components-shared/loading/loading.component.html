@@ -1,1 +1,6 @@
-<p>loading works!</p>
+<div *ngIf="wrap" class="cover center y">
+    <div class="circle"></div>
+    <p *ngIf="msg">{{ msg }}</p>
+</div>
+<div *ngIf="!wrap" class="circle"></div>
+<p *ngIf="!wrap && msg">{{ msg }}</p>
