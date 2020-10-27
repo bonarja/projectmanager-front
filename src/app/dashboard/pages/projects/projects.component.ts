@@ -11,7 +11,7 @@ import { ProjectState } from './projects.state.service';
 })
 export class ProjectsComponent implements OnInit {
     showCreateProject: boolean = false;
-    projects: Array<Project> = [];
+    projects: Array<Project>;
     cssToOpenCard: any = null;
     projectOpened: Project = null;
     inAnimation: boolean = false;
@@ -24,7 +24,7 @@ export class ProjectsComponent implements OnInit {
         this.load();
     }
     load() {
-        // this.projects = [];
+        this.projects = null;
         this.api.getProjects().then((projects: any) => {
             this.projectState.state.projectList = projects;
         });
