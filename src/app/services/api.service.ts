@@ -25,4 +25,5 @@ export class ApiService {
         this.request.api('project/create', form).post();
     getTasks = (projectId: number) =>
         this.request.api('tasks', { project: projectId }).post();
+    taskCreate = (form: any) => this.request.api('task/create', form).post();
 }

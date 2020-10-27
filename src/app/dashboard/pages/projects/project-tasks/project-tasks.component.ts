@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Project } from 'src/app/interfaces/project.interface';
 import { Task } from 'src/app/interfaces/task.interface';
 import { ApiService } from 'src/app/services/api.service';
+import { ProjectState } from '../projects.state.service';
 
 @Component({
     selector: 'ProjectTasks',
@@ -10,8 +11,13 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class ProjectTasksComponent implements OnInit {
     @Input() project: Project;
+
     tasks: Array<Task> = null;
-    constructor(private api: ApiService) {}
+    constructor(private api: ApiService, private projectState: ProjectState) {
+        this.projectState.subscribe((data) => {
+            this.tasks = data.taskList;
+        });
+    }
 
     ngOnInit(): void {
         this.load();
@@ -19,7 +25,7 @@ export class ProjectTasksComponent implements OnInit {
     load() {
         this.tasks = null;
         this.api.getTasks(this.project.id).then((tasks: Array<Task>) => {
-            this.tasks = tasks.reverse();
+            this.projectState.state.taskList = tasks;
         });
     }
     getColor(finish: boolean) {
@@ -30,5 +36,8 @@ export class ProjectTasksComponent implements OnInit {
             : {
                   backgroundColor: '#f36031',
               };
+    }
+    newTask() {
+        this.projectState.state.actionNewTask = true;
     }
 }

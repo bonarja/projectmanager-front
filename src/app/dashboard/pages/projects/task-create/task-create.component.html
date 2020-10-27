@@ -1,0 +1,21 @@
+<div class="header">
+    <div class="back center" (click)="back()">
+        <div class="backButton center">
+            <span class="material-icons"> arrow_back </span>
+        </div>
+    </div>
+    <div class="center title" (click)="back()">Regresar</div>
+</div>
+<div class="form">
+    <custom_input name="nombre" nid="name" [change]="input"></custom_input>
+    <custom_input
+        name="descripción"
+        nid="description"
+        type="textarea"
+        [change]="input"
+    ></custom_input>
+    <Toggle name="finalizado" nid="finish" [onchange]="input"></Toggle>
+</div>
+<div class="buttons">
+    <button class="btn" (click)="create()">crear</button>
+</div>

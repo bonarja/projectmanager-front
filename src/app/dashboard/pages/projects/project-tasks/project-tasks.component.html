@@ -1,6 +1,6 @@
 <Loading *ngIf="!tasks"></Loading>
 <div class="list cover" *ngIf="tasks">
-    <div class="task animated zoomIn addTask center">
+    <div class="task animated zoomIn addTask center" (click)="newTask()">
         <span _ngcontent-upc-c67="" class="material-icons"> add </span>
         <p>Nueva Tarea</p>
     </div>

@@ -2,34 +2,47 @@
     class="cardProject cover center"
     [ngStyle]="getStyleOpened('cardProject', isOpened)"
 >
-    <div
-        class="cardContent cover relative"
-        [ngStyle]="getStyleOpened('cardContent', isOpened)"
-    >
+    <div class="cardContent cover relative">
         <div
             *ngIf="isOpened"
             class="closeBtn animated zoomIn"
             (click)="close()"
         ></div>
-        <div class="header">
-            <div
-                class="box"
-                [ngStyle]="{ backgroundColor: project.color || 'coral' }"
-            ></div>
-            <div class="text">
-                <p class="t">{{ project.name }}</p>
-            </div>
-        </div>
-        <p
-            class="description"
-            [ngStyle]="getStyleOpened('description', isOpened)"
+        <div
+            class="showProjectInfoAndTask cover"
+            [ngStyle]="getStyleOpened('cardContent', isOpened)"
+            [ngClass]="{
+                animated: showTaskCreate && isOpened,
+                fadeOutLeftBig: showTaskCreate && isOpened
+            }"
         >
-            {{ project.description }}
-        </p>
-        <div class="taskCount center y" *ngIf="!isOpened">
-            <label class="count">{{ project.taskCount }}</label>
-            <label class="tareas">Tareas</label>
+            <div class="header">
+                <div
+                    class="box"
+                    [ngStyle]="{ backgroundColor: project.color || 'coral' }"
+                ></div>
+                <div class="text">
+                    <p class="t">{{ project.name }}</p>
+                </div>
+                <div class="options center" *ngIf="!isOpened">
+                    <span class="material-icons"> more_vert </span>
+                </div>
+            </div>
+            <p
+                class="description"
+                [ngStyle]="getStyleOpened('description', isOpened)"
+            >
+                {{ project.description }}
+            </p>
+            <div class="taskCount center y" *ngIf="!isOpened">
+                <label class="count">{{ project.taskCount }}</label>
+                <label class="tareas">Tareas</label>
+            </div>
+            <ProjectTasks *ngIf="isOpened" [project]="project"></ProjectTasks>
         </div>
-        <ProjectTasks *ngIf="isOpened" [project]="project"></ProjectTasks>
+        <TaskCreate
+            *ngIf="showTaskCreate && isOpened"
+            class="cover animated fadeInRightBig"
+        ></TaskCreate>
     </div>
 </div>

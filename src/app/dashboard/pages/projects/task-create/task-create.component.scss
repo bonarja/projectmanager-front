@@ -1,0 +1,45 @@
+:host {
+    // max-width: 922px;
+    // max-height: 850px;
+    background-color: white;
+    position: absolute;
+    animation-duration: 300ms;
+    padding: 20px;
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+}
+.header {
+    height: 90px;
+    display: grid;
+    grid-template-columns: min-content auto;
+    .back {
+        width: 70px;
+        justify-content: flex-start;
+        .backButton {
+            user-select: none;
+            background-color: #f36031;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            cursor: pointer;
+            span {
+                font-size: 1.9em;
+            }
+        }
+    }
+    .title {
+        justify-content: flex-start;
+        font-size: 1.5em;
+        letter-spacing: 0.02em;
+        user-select: none;
+        cursor: pointer;
+        color: #2f3039;
+    }
+}
+.buttons {
+    padding-top: 15px;
+    .btn {
+        float: right;
+    }
+}

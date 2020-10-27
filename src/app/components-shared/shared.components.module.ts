@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { LoaderComponent } from '../login/components/loader/loader.component';
 import { LoadingComponent } from './loading/loading.component';
+import { ToggleComponent } from './toggle/toggle.component';
 
 @NgModule({
-    declarations: [LoadingComponent],
+    declarations: [LoadingComponent, ToggleComponent],
     imports: [CommonModule],
-    exports: [LoadingComponent],
+    exports: [LoadingComponent, ToggleComponent],
 })
 export class SharedComponentsModule {}
