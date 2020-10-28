@@ -65,9 +65,17 @@ export class Request {
                             }
                             if (
                                 typeof result === 'object' &&
-                                (result.error || result.errors)
+                                (result.error ||
+                                    result.errors ||
+                                    (result.code && result.message))
                             ) {
+                                if (result.code && result.message) {
+                                    showErrorAlert &&
+                                        GLOBAL.alert(result.message);
+                                    return;
+                                }
                                 if (result.error === 'NO_ACCESS') {
+                                    4;
                                     showErrorAlert &&
                                         GLOBAL.alert('Sin Acceso');
                                     return;
@@ -96,7 +104,7 @@ export class Request {
                     );
             });
 
-        const REQUESTS = (type: 'get' | 'post' | 'put' | 'path') =>
+        const REQUESTS = (type: 'get' | 'post' | 'put' | 'patch') =>
             new Promise((done, reject) => {
                 request(type)
                     .then((r) => done(r))
@@ -120,7 +128,7 @@ export class Request {
             post: () => REQUESTS('post'),
             get: () => REQUESTS('get'),
             put: () => REQUESTS('put'),
-            path: () => REQUESTS('path'),
+            patch: () => REQUESTS('patch'),
         };
     }
 }
