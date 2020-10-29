@@ -11,7 +11,7 @@ type OptionsCallApi =
     | string
     | {
           path?: string;
-          data?: string;
+          data?: any;
           timeout?: number;
           showErrorAlert?: boolean;
       };

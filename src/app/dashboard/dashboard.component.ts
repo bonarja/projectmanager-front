@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '../services/api.service';
 
 interface Menu {
     name: string;
@@ -20,7 +21,7 @@ export class DashboardComponent implements OnInit {
         { name: 'Proyectos', path: 'projects' },
         { name: 'Tareas', path: 'tasks' },
     ];
-    constructor(private router: Router, private me: ElementRef) {}
+    constructor(private router: Router, private api: ApiService) {}
 
     ngOnInit(): void {
         this.activeMenu = this.currentMenu;
@@ -28,14 +29,6 @@ export class DashboardComponent implements OnInit {
     navigate(menu: Menu) {
         this.activeMenu = menu;
         this.animate = menu;
-        // const el = this.me.nativeElement.find('.menu .item')[
-        //     this.menu.indexOf(menu)
-        // ];
-        // if (el) {
-        //     el.removeClass('zoomIn');
-        //     el.css({ animationDelay: 0 });
-        //     setTimeout(() => el.in('bounceIn', 'flex', 200), 20);
-        // }
         this.router.navigate([`/dashboard/${menu.path}`]);
     }
     get currentMenu(): Menu {
@@ -44,5 +37,10 @@ export class DashboardComponent implements OnInit {
         );
         if (route.length) return route.pop();
         return null;
+    }
+    logout() {
+        localStorage.clear();
+        this.api.isValidToken = false;
+        this.router.navigate(['/login']);
     }
 }

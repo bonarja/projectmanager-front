@@ -1,23 +1,30 @@
 <div class="wrapDashboard cover center">
-    <div class="dashboard cover">
+    <div class="dashboard cover animated zoomIn">
         <div class="dheader">
             <div class="icon center">
-                <div class="circle center animated bounceIn">
-                    <span class="material-icons">
-                        assignment_turned_in
-                    </span>
+                <div class="circle center animated zoomIn">
+                    <span class="material-icons"> assignment_turned_in </span>
                 </div>
             </div>
             <div class="menu center">
-                <div 
-                    class="item center animated" 
-                    *ngFor="let item of menu; let i = index" 
-                    [ngClass]="{active: item === activeMenu, zoomIn: !animate, bounceIn: animate && item === activeMenu}"
+                <div
+                    class="item center animated"
+                    *ngFor="let item of menu; let i = index"
+                    [ngClass]="{
+                        active: item === activeMenu,
+                        zoomIn: !animate,
+                        bounceIn: animate && item === activeMenu
+                    }"
                     (click)="navigate(item)"
-                    [ngStyle]="{animationDelay: (animate ? 0 : i * 100) + 'ms'}"
+                    [ngStyle]="{
+                        animationDelay: (animate ? 0 : i * 100 + 400) + 'ms'
+                    }"
                 >
-                    {{item.name}}
+                    {{ item.name }}
                 </div>
+            </div>
+            <div class="logout" (click)="logout()">
+                <div class="animated zoomIn"></div>
             </div>
         </div>
         <div class="dcontent cover">
